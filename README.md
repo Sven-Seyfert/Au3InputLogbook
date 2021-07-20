@@ -37,7 +37,7 @@ Starting the EXE `build\Au3InputLogbook.exe` which is compiled with `#AutoIt3Wra
 
 **Variant 2 - Compile it on your own**
 
-Open file `src\Au3InputLogbook.au3`, adjust the *#AutoIt3Wrapper compiler information* if you want to (for example you could change `#AutoIt3Wrapper_UseUpx=y` from no to yes etc.).
+Open file `src\Au3InputLogbook.au3`, adjust the *#AutoIt3Wrapper compiler information* if you want to. For example you could change `#AutoIt3Wrapper_UseUpx=n` from no (n) to yes (y), etc.
 Then, run or compile the program.
 
 #### *Usage*
