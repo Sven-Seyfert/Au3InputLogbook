@@ -2,8 +2,8 @@
 #AutoIt3Wrapper_AU3Check_Stop_OnWarning=y
 #AutoIt3Wrapper_Icon=..\media\favicon.ico
 #AutoIt3Wrapper_Outfile_x64=..\build\Au3InputLogbook.exe
-#AutoIt3Wrapper_Res_Description=Au3InputLogbook (2021-07-07)
-#AutoIt3Wrapper_Res_Fileversion=0.3
+#AutoIt3Wrapper_Res_Description=Au3InputLogbook (2021-07-20)
+#AutoIt3Wrapper_Res_Fileversion=0.4
 #AutoIt3Wrapper_UseUpx=n
 #AutoIt3Wrapper_UseX64=y
 
@@ -32,9 +32,15 @@ If $aInst[0][0] > 1 Then Exit
 ; processing -------------------------------------------------------------------
 While True
     Select
-        ; Ctrl + Alt
-        Case _isKeyPressed( '11' ) And _isKeyPressed( '12' )
-            _wasKeyOfKeyTypePressed( $aAltKeys )
+        ; Ctrl+Alt or Ctrl
+        Case _isKeyPressed( '11' )
+            While _isKeyPressed( '11' )
+                If _isKeyPressed( '12' ) Then
+                    _wasKeyOfKeyTypePressed( $aAltKeys )
+                Else
+                    _wasKeyOfKeyTypePressed( $aAlphabetKeys, 2 )
+                EndIf
+            WEnd
 
         ; Shift
         Case _isKeyPressed( '10' )
@@ -42,12 +48,6 @@ While True
                 _wasKeyOfKeyTypePressed( $aAlphabetKeys, 1 )
                 _wasKeyOfKeyTypePressed( $aUmlautKeys, 1 )
                 _wasKeyOfKeyTypePressed( $aShiftKeys )
-            WEnd
-
-        ; Ctrl
-        Case _isKeyPressed( '11' )
-            While _isKeyPressed( '11' )
-                _wasKeyOfKeyTypePressed( $aAlphabetKeys, 2 )
             WEnd
 
         ; Alt

