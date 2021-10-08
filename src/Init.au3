@@ -1,2 +1,2 @@
-OnAutoItExitRegister( '_exit' )
-FileWrite( $hLogFile, $sUserInformation )
+OnAutoItExitRegister('_exit')
+FileWrite($hLogFile, $sUserInformation)

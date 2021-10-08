@@ -1,6 +1,6 @@
 ;~ Global $sLogFile = @YEAR & @MON & @MDAY & @HOUR & @MIN & @SEC & @MSEC & '.log'
 Global $sLogFile = @YEAR & @MON & @MDAY & '.md'
-Global $hLogFile = FileOpen( $sLogFile, 1 + 8 + 256 )
+Global $hLogFile = FileOpen($sLogFile, 1 + 8 + 256)
 
 Global $sUserInformation = _
     '| Category   | Value |'                                        & @CRLF & _
