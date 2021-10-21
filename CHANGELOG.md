@@ -5,6 +5,12 @@ All notable changes to "Au3InputLogbook" will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2021-10-21
+
+### Added
+
+- Compiler information to executable.
+
 ## [1.0.0] - 2021-10-08
 
 ### Added
@@ -15,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - AutoIt Code formatting to the common notation without additional spaces after opened brackets and before closed brackets.
 
+[1.1.0]: https://github.com/Sven-Seyfert/Au3InputLogbook/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/Sven-Seyfert/Au3InputLogbook/releases/tag/v1.0.0
 
 ---
