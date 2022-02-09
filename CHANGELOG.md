@@ -9,6 +9,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Go to [legend](#legend---types-of-changes) for further information about the types of changes.
 
+## [1.2.0] - 2022-02-09
+
+### Changed
+
+- Update copyright year to 2022 in LICENSE.md file.
+- Update of documents/templates (bug report-, feature request- and pull request template).
+- Update of the contributing file.
+- Code of Conduct update to their version v2.1.
+- Version bump.
+
+### Removed
+
+- Unnecessary documents/templates in docs directory.
+- Code to generate these unnecessary files in docs.
+
 ## [1.1.0] - 2021-10-21
 
 ### Added
@@ -25,6 +40,7 @@ Go to [legend](#legend---types-of-changes) for further information about the typ
 
 - AutoIt Code formatting to the common notation without additional spaces after opened brackets and before closed brackets.
 
+[1.2.0]: https://github.com/Sven-Seyfert/Au3InputLogbook/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/Sven-Seyfert/Au3InputLogbook/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/Sven-Seyfert/Au3InputLogbook/releases/tag/v1.0.0
 
