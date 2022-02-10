@@ -5,11 +5,11 @@
     <h2 align="center">Welcome to <code>Au3InputLogbook</code>【ツ】</h2>
 </p>
 
-![license](https://img.shields.io/badge/license-MIT-ff69b4.svg?style=flat-square&logo=spdx)
-![contributors](https://img.shields.io/github/contributors/Sven-Seyfert/Au3InputLogbook.svg?style=flat-square&logo=github)
+[![license](https://img.shields.io/badge/license-MIT-ff69b4.svg?style=flat-square&logo=spdx)](https://github.com/Sven-Seyfert/Au3InputLogbook/blob/main/LICENSE.md)
+[![contributors](https://img.shields.io/github/contributors/Sven-Seyfert/Au3InputLogbook.svg?style=flat-square&logo=github)](https://github.com/Sven-Seyfert/Au3InputLogbook/graphs/contributors)
 ![repo size](https://img.shields.io/github/repo-size/Sven-Seyfert/Au3InputLogbook.svg?style=flat-square&logo=github)
-![last commit](https://img.shields.io/github/last-commit/Sven-Seyfert/Au3InputLogbook.svg?style=flat-square&logo=github)
-![release](https://img.shields.io/github/release/Sven-Seyfert/Au3InputLogbook.svg?style=flat-square&logo=github)
+[![last commit](https://img.shields.io/github/last-commit/Sven-Seyfert/Au3InputLogbook.svg?style=flat-square&logo=github)](https://github.com/Sven-Seyfert/Au3InputLogbook/commits/main)
+[![release](https://img.shields.io/github/release/Sven-Seyfert/Au3InputLogbook.svg?style=flat-square&logo=github)](https://github.com/Sven-Seyfert/Au3InputLogbook/releases/latest)
 ![os](https://img.shields.io/badge/os-windows-yellow.svg?style=flat-square&logo=windows)
 ![editor](https://img.shields.io/badge/editor-VSCode-blueviolet.svg?style=flat-square&logo=visual-studio-code)
 
