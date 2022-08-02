@@ -25,7 +25,7 @@ If $aInst[0][0] > 1 Then Exit
 
 
 
-; references -------------------------------------------------------------------
+; modules ----------------------------------------------------------------------
 #include "Declaration.au3"
 #include "Init.au3"
 #include "Functions.au3"

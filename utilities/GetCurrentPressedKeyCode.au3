@@ -14,8 +14,8 @@
 
 
 ; opt and just singleton -------------------------------------------------------
-Opt( 'MustDeclareVars', 1 )
-Global $aInst = ProcessList( 'GetCurrentPressedKeyCode.exe' )
+Opt('MustDeclareVars', 1)
+Global $aInst = ProcessList('GetCurrentPressedKeyCode.exe')
 If $aInst[0][0] > 1 Then Exit
 
 
