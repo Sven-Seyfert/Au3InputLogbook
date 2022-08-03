@@ -6,7 +6,7 @@
 #pragma compile(ProductVersion, 1.6.0 - 2022-08-02)
 
 #AutoIt3Wrapper_AU3Check_Stop_OnWarning=y
-#AutoIt3Wrapper_Icon=..\media\favicon.ico
+#AutoIt3Wrapper_Icon=..\media\icons\favicon.ico
 #AutoIt3Wrapper_Outfile_x64=..\build\Au3InputLogbook.exe
 #AutoIt3Wrapper_UseUpx=n
 #AutoIt3Wrapper_UseX64=y
@@ -26,7 +26,7 @@ If $aInst[0][0] > 1 Then Exit
 
 
 ; modules ----------------------------------------------------------------------
-#include "Declaration.au3"
+#include "Initializer.au3"
 #include "Init.au3"
 #include "Functions.au3"
 #include "BasicFunctions.au3"
